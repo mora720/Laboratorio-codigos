@@ -1,0 +1,32 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity lab3 is
+Port (A: in std_logic;
+      B: in std_logic;
+      C: in std_logic;
+      x: out std_logic );
+end lab3;
+
+architecture Behavioral of lab3 is
+signal  AC_out: std_logic;
+signal  AB_out: std_logic;
+signal  BC_out: std_logic;
+signal  ABC_out: std_logic;
+begin
+AC_out <= not A and C;
+AB_out <= not A and B;
+BC_out <= B and C;
+ABC_out <= A and not B and not C;
+X <= AC_out or AB_out or BC_out or ABC_out;
+
+end Behavioral;
