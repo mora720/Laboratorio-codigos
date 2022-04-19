@@ -1,0 +1,128 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity tb is
+--  Port ( );
+end tb;
+
+architecture Behavioral of tb is
+component Lab4 is 
+Port (A: in std_logic; 
+      B: in std_logic; 
+      C: in std_logic;
+      D: in std_logic;
+      X: out std_logic);
+end component;
+--entradas
+signal A_s: std_logic;
+signal B_s: std_logic;
+signal C_s: std_logic;
+signal D_s: std_logic;
+--salida
+signal X_s: std_logic;
+
+begin
+--diseno bajo prueba
+DUT: lab4 port map (A=>A_s,
+                        B=>B_s,
+                        C=>C_s,
+                        D=>D_s,
+                        X=>X_s);
+--generar todas las entradas asignando valores por la tabla de verdad
+process
+begin
+
+A_s<='0';
+B_s<='0';
+C_s<='0';
+D_s<='0';
+wait for 20 ns;
+A_s<='0';
+B_s<='0';
+C_s<='0';
+D_s<='1';
+wait for 20 ns;
+A_s<='0';
+B_s<='0';
+C_s<='1';
+D_s<='0';
+wait for 20 ns;
+A_s<='0';
+B_s<='0';
+C_s<='1';
+D_s<='1';
+wait for 20 ns;
+A_s<='0';
+B_s<='1';
+C_s<='0';
+D_s<='0';
+wait for 20 ns;
+A_s<='0';
+B_s<='1';
+C_s<='0';
+D_s<='1';
+wait for 20 ns;
+A_s<='0';
+B_s<='1';
+C_s<='1';
+D_s<='0';
+wait for 20 ns;
+
+A_s<='0';
+B_s<='1';
+C_s<='1';
+D_s<='1';
+wait for 20 ns;
+
+A_s<='1';
+B_s<='0';
+C_s<='0';
+D_s<='0';
+wait for 20 ns;
+A_s<='1';
+B_s<='0';
+C_s<='0';
+D_s<='1';
+wait for 20 ns;
+A_s<='1';
+B_s<='0';
+C_s<='1';
+D_s<='0';
+wait for 20 ns;
+A_s<='1';
+B_s<='0';
+C_s<='1';
+D_s<='1';
+wait for 20 ns;
+A_s<='1';
+B_s<='1';
+C_s<='0';
+D_s<='0';
+wait for 20 ns;
+A_s<='1';
+B_s<='1';
+C_s<='0';
+D_s<='1';
+wait for 20 ns;
+A_s<='1';
+B_s<='1';
+C_s<='1';
+D_s<='0';
+wait for 20 ns;
+A_s<='1';
+B_s<='1';
+C_s<='1';
+D_s<='1';
+wait for 20 ns;
+end process;
+
+end Behavioral;
